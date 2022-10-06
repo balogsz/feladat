@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masol/Töröl</title>
+
+    <style>
+
+        body{
+            width: calc(100%-16px);
+           
+         
+            
+        }
+        .keret{
+    
+            
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        .oszlop{
+           width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            
+        }
+        
+        button{
+           margin-top: 15px;
+        }
+        p{
+            width: 100%;
+        }
+        textarea{
+            width: 300px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="keret">
+        <div class="oszlop">
+            <p>Eredeti</p>
+            <textarea  id="eredeti" cols="30" rows="5"></textarea>
+            <button id="masol" >Másol</button>
+        </div>
+        <div class="oszlop">
+            <p>Másolat</p>
+            <textarea  id="masolat" cols="30" rows="5"></textarea>
+            <button onclick="Torol()">Töröl</button>
+
+            
+        </div>
+    </div>
+    <script>
+        let masolgomb = document.querySelector("#masol");
+        masolgomb.onclick = () => {
+            let szoveg = document.querySelector("#eredeti").value;
+            document.querySelector("#masolat").value = szoveg;
+        } ;
+
+        function Torol(){
+            document.querySelector("#masolat").value = "";
+        }
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

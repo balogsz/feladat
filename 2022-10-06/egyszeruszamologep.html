@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egyszerű számológép</title>
+
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .szamologep{
+            display: flex;
+            border: 1px solid rgb(0, 123, 255);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 15px 10px 15px;
+            gap: 10px;
+        }
+        button{
+            
+            background-color: rgb(0, 123, 255);
+            border-radius: 5px;
+            border-color: rgb(0, 123, 255);
+            color: white;
+        }
+        p{
+            margin: 0px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-decoration-style: double;
+        }
+        .masikszamologep{
+            border: 1px solid rgb(0, 123, 255);
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 0px 15px 10px 15px;
+        }
+        input{
+            width: 190px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <div class="szamologep">
+        <p>Egyszerű számológép</p>
+        <input type="number" placeholder="Add meg az egyik számot" id="elso">
+        <input type="number" placeholder="Add meg a másik számot" id="masodik">
+        <input type="number" disabled id="eredmeny">
+
+        <div class="gombok">
+            <button onclick="plusz()">+</button>
+            <button onclick="minusz()">-</button>
+            <button onclick="osztas()">/</button>
+            <button onclick="szorzas()">*</button>
+        </div>
+    </div>
+
+    <div class="masikszamologep">
+        <p>Egyszerű szamológép</p>
+        <div>
+            <input type="number" id="szam1" placeholder="Add meg az egyik számot">
+            <select id="muvelet">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="/">/</option>
+                <option value="*">*</option>
+            </select>
+            <input type="number" id="szam2" placeholder="Add meg a másik számot">
+            <button onclick="szamolas()">=</button>
+            <input type="number" disabled id="eredmeny2">
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    <script>
+        function plusz(){
+            let elso = Number(document.querySelector("#elso").value);
+            let masodik = Number(document.querySelector("#masodik").value);
+            document.querySelector("#eredmeny").value = elso + masodik;
+        }
+        function minusz(){
+            let elso = Number(document.querySelector("#elso").value);
+            let masodik = Number(document.querySelector("#masodik").value);
+            document.querySelector("#eredmeny").value = elso - masodik;
+        }
+        function osztas(){
+            let elso = Number(document.querySelector("#elso").value);
+            let masodik = Number(document.querySelector("#masodik").value);
+            document.querySelector("#eredmeny").value = elso / masodik;
+        }
+        function szorzas(){
+            let elso = Number(document.querySelector("#elso").value);
+            let masodik = Number(document.querySelector("#masodik").value);
+            document.querySelector("#eredmeny").value = elso * masodik;
+        }
+
+        function szamolas(){
+            let elso = Number(document.querySelector("#szam1").value);
+            let masodik = Number(document.querySelector("#szam2").value);
+            let eredmeny =  document.querySelector("#eredmeny2")
+            
+            let muvelet = document.querySelector("#muvelet").value;
+            if(muvelet === "+"){
+                eredmeny.value = elso + masodik;
+            }
+
+            if(muvelet === "-"){
+                eredmeny.value = elso - masodik;
+            }
+
+            if(muvelet === "/"){
+                eredmeny.value = elso / masodik;
+            }
+
+            if(muvelet === "*"){
+                eredmeny.value = elso * masodik;
+            }
+
+        }
+
+    </script>
+</body>
+</html>
