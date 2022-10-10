@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bolygók</title>
+
+  <style>
+    body{
+      height: 100vh;
+      background:  rgba(52 58 64);
+    }
+    .keret{
+      border: white solid 1px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-content: center;
+      justify-content: space-evenly;
+      margin: 10px 250px 20px 250px;
+      flex-wrap: wrap;
+    }
+    .oszlop{
+      border: white solid 1px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 200px;
+      margin: 0px 20px 0px 20px;
+      
+    }
+    img{
+      height: 200px;
+      width: 200px;
+    }
+    h1{
+      margin: 15px 30px 5px 30px;
+      text-align: center;
+      color: white;
+    }
+    h3{
+      color: white;
+    }
+    hr{
+      width: 200px;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <h1>A Naprendszer bolygói</h1>
+    <div class="keret" onclick="show2(event)">
+      <div class="oszlop">
+        <img   src="merkur.jpg" >
+        <hr>
+        <h3>Merkúr</h3> 
+      </div>
+
+      <div class="oszlop">
+        <img  src="venusz.jpg" >
+        <hr>
+        <h3>Vénusz</h3>
+      </div>
+
+      <div class="oszlop">
+        <img   src="fold.jpg">
+        <hr>
+        <h3>Föld</h3>
+      </div>
+
+      <div class="oszlop">
+        <img   src="mars.jpg" >
+        <hr>
+        <h3>Mars</h3>
+     </div>
+
+    
+      <div class="oszlop">
+        <img  src="jupiter.jpg" >
+        <hr>
+        <h3>Jupiter</h3>
+      </div>
+
+      <div class="oszlop">
+        <img    src="saturn.jpg" >
+        <hr>
+        <h3>Szaturnusz</h3>
+      </div>
+
+      <div class="oszlop">
+        <img  src="uranus.jpg" >
+        <hr>
+        <h3>Uránusz</h3>
+      </div>
+
+      <div class="oszlop">
+        <img  src="neptun.jpg" >
+        <hr>
+        <h3>Neptunusz</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /*  function show(obj){
+        console.log(obj.src)
+        window.open(obj.src,`_blank`)
+    }*/
+
+    function show2(e){
+        console.log(e.target)
+        console.log(e.target.tagName)
+        if(e.target.tagName=='IMG'){
+            window.open(e.target.src,`_blank`)
+        }
+    }
+
+</script>
+
+</body>
+
+</htm
