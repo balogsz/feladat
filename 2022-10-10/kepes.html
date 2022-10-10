@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kép</title>
+</head>
+<body>
+    <div class="container">
+       <div class="row">
+        <img src="ccc.png" alt="kardos" class="img-fluid" width="30%">
+       </div>
+    <div class="row">
+        <p class="bg-light p-3 border" onmouseover="csere()">Segítség</p>    
+    </div>
+    </div>
+    <script>
+        function csere(){
+            console.log("OK")
+            document.querySelector(`img`).src="kardos.png"
+            
+        }
+    </script>
+</body>
+</html>
