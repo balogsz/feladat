@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téglalap kerülete és területe</title>
+    <style>
+        body{
+            height: 100VH;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            width: 170px;
+            
+        }
+        .body{
+            border: 1px solid red;
+
+        }
+        .mezo:focus{
+            border: none;
+            outline: none;
+        }
+        h1{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="ablak">
+        <div class="body">
+            <div class="fejlec">
+                <h1>Téglalap</h1>
+            </div>
+            <div class="bekertszam">
+                <p>Szám bekérése</p>
+                <input type="number" value="bekertszam" id="bekertszam" >
+                <input type="number" value="bekertszam2" id="bekertszam2">
+            </div>
+            <div class="gomb">
+                <button onclick="szamol()">Számol</button>
+            </div>
+
+            <div class="eredmeny">
+                <p id="eredmenyidterulet">Terület= </p>cm<sup>2
+                
+            </div>
+
+            <div class="eredmeny">
+                <p id="eredmenyidkerulet">Kerület= </p>cm
+            </div>
+        </div>
+     </div>
+     <script>
+        function szamol(){
+            console.log("OK")
+            let oldal=+document.querySelector("#bekertszam").value
+            let oldal2=+document.querySelector("#bekertszam2").value
+            let T=oldal*oldal2
+            let K=2*(oldal+oldal2)
+            document.getElementById("eredmenyidterulet").innerHTML+=T
+            document.getElementById("eredmenyidkerulet").innerHTML+=K
+            if(oldal<=0 || oldal2<=0){
+                alert("Helytelen adat. Nem lehet negatív szám vagy nulla!");
+                document.querySelector("#bekertszam").value=""
+                document.querySelector("#bekertszam2").value=""
+            }
+        }
+     </script>
+</body>
+</html>
