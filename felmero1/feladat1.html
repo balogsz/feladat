@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Képcsere</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+         <img src="fold.jpg" alt="fold" id="kep">
+        </div>
+     <div class="row">
+         <button  onclick="csere2()">Csere</p>    
+     </div>
+     </div>
+     <script>
+         /*function csere(){
+             console.log("OK")
+            // document.querySelector(`img`).src="mars.jpg"
+             if(document.querySelector(`img`).src="fold.jpg"){
+                document.querySelector(`img`).src="mars.jpg"
+             }
+             else if(document.querySelector(`img`).src="mars.jpg"){
+                document.querySelector(`img`).src="fold.jpg"
+             }
+         }*/
+         function csere2(){
+            var image = document.getElementById('kep');
+            if (image.src.match("mars")) {
+                image.src = "fold.jpg";
+            }
+            else {
+                image.src = "mars.jpg";
+            }
+         }
+     </script>
+</body>
+</html>
