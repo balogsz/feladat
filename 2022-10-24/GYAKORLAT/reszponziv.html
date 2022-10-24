@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reszponziós</title>
+</head>
+<style>
+    table{
+        margin: 0 auto;
+    }
+
+</style>
+<body>
+    <div style="overflow-x:auto;">
+    <table>
+        <tr>
+          <td id="bal">
+                 <div class="col-md-6 col-6 border display:inline-block;">
+                  <p>Üzenet</p>
+                  <textarea id="uzenet" cols="30" rows="10"></textarea><br>
+                  <div class="visszajelzes"></div>
+        </td>
+        <td id="jobb">
+                <p>Név</p>
+                <input id="nev" type="text" placeholder="név">
+                <p>Email</p>
+                <input id="email" type="text" placeholder="név">
+                <input type="button" onclick="katt()" value="Küldés">
+        </td>
+          
+        </tr>
+      </table>
+    </div>
+    
+
+    <script>
+        function katt(){
+
+           let hibas=[]
+           document.querySelector('.visszajelzes').innerHTML=""
+
+        let nev=document.getElementById('nev').value
+         console.log(nev)
+         if(nev.length>3){
+             nev=nev
+          }
+        else{
+            hibas.push("Nincs név megadva.")    
+        }
+
+        let uzenet=document.getElementById('uzenet').value
+        console.log(uzenet)
+        if(uzenet.length!=0){
+            uzenet=uzenet
+         }
+        else{
+            hibas.push("Nincs üzenet beírva")
+        }
+
+        let email=document.getElementById('email').value
+        console.log(email)
+        if(email.length>3){
+            email=email
+        }
+        else{
+            hibas.push("Nincs kitöltve az E-mail")
+        }
+
+    
+        if(hibas.length==0){
+            document.querySelector('.visszajelzes').innerHTML="Köszönjük a visszajelzést"
+        }
+        else{
+            bajvan(hibas)
+        }
+}
+
+
+function bajvan(arr){
+    let strUL="<ul>"
+    for(let txt of arr){
+        strUL+=`<li>${txt}</li>`
+    }
+    strUL += "</ul>"
+    document.querySelector('.visszajelzes').innerHTML=strUL
+}
+
+
+    </script>
+</body>
+</html>
