@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        img{
+            height: 300px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cím</th>
+                    <th>Megjelenés éve</th>
+                    <th>Évadok száma</th>
+                    <th>Kategória</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+<img src="dexter.jfif" alt="dexter"><img src="got.jfif" alt="game of thrones"><img src="shameless.jpg" alt="shameless"><img src="oouil.jfif" alt="oneofus"><img src="strange.jfif" alt="strange"><img src="jeff.jpg" alt="jeffrey"><img src="kigyo.jpg" alt="kigyo">
+
+    <script src="hobbika.js"></script>
+    <script>
+
+let strTbl=""
+        for(let obj of sorozat){
+            strTbl+=`
+            <tr>
+                <td>${obj.id}</td>
+                <td>${obj.nev}</td>
+                <td>${obj.kiadaseve}</td>
+                <td>${obj.evadok}</td>
+                <td>${obj.kategoria}</td>
+            </tr>
+            `
+        }
+        console.log(strTbl)
+        document.querySelector('tbody').innerHTML=strTbl
+    </script>
+
+</body>
+</html>

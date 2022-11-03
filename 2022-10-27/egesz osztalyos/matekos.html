@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felmérő</title>
+</head>
+
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+        }
+        .keret{
+            border: orange solid 5px;
+            display: flex;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            width: 500px;
+
+        }
+        .oszlop{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            gap: 10px;    
+        }
+    </style>
+<body>
+    <div class="keret">
+        <div class="oszlop">
+            <p>+</p>
+            <button onclick="Ok()">OK</button>
+            <button onclick="Uj()">Új</button>
+        </div>
+         <div class="oszlop">
+            <input id="elsoszam" type="number" disabled>
+            <input id="masodikszam" type="number" disabled>
+            <input id="eredmeny" type="number">
+            <input id="eredmenytext" type="text">
+        </div>
+        <div class="oszlop">
+            <img id="fej" src="var.gif" alt="Vár" title="Vár">
+        </div>
+    </div>
+
+    <script>
+        function Uj(){
+            let randomszam = Math.floor(Math.random()*100);
+            document.querySelector("#elsoszam").value = randomszam;
+            let randomszam2 = Math.floor(Math.random()*100);
+            document.querySelector("#masodikszam").value = randomszam2;
+
+            function rand(a){
+            return Math.floor(Math.random()*a)
+        }
+
+        let eredmeny =+ document.querySelector("#eredmeny").value;
+            eredmeny = "";
+            document.querySelector("#eredmeny").value = eredmeny;
+            document.querySelector("#eredmenytext").value = eredmeny;
+        }
+        function Ok(){
+           let eredmeny =+ document.querySelector("#eredmeny").value;
+           let osszeg1 =+ document.querySelector("#elsoszam").value;
+           let osszeg2 =+ document.querySelector("#masodikszam").value;
+           let joeredmeny = osszeg1+osszeg2;
+
+
+           if(eredmeny === joeredmeny){
+                document.getElementById('fej').src='igen.gif';
+                document.querySelector("#eredmenytext").value = "Ügyes";
+           }
+          else if(eredmeny != joeredmeny){           
+                document.getElementById('fej').src='nem.gif';
+                document.getElementById("eredmenytext").value = "Butus";
+           }
+        }
+    </script>
+</body>
+</html>
