@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<ul></ul>
+    <script>
+        const api_key="62612df2163ac69137b928603ffad005"
+        const url=`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=hu&page=1&include_adult=false`
+        
+
+        async function getFilms(title){
+             const response= await fetch(`${url}&query=${title}`);
+             const data= await response.json();
+             console.log(data)
+            render(data.results)
+        }
+        
+    function render(data){
+        for(let obj of data){
+            console.log(obj)
+            document.querySelector('ul').innerHTML+=`
+                <li>${obj.title}</li>
+            `
+        }
+    }
+      
+ getFilms('Star Wars')
+
+    </script>
+</body>
+</html>
